@@ -46,7 +46,10 @@ def download() -> None:
     """Pull the base weights onto the volume on a CPU container, so no GPU time is spent downloading."""
     from huggingface_hub import snapshot_download
 
-    snapshot_download(MODEL_ID, allow_patterns=["*.json", "*.safetensors", "tokenizer*"])
+    # The repo also ships consolidated.safetensors (Mistral format); skip it, the sharded files are enough.
+    snapshot_download(
+        MODEL_ID, allow_patterns=["*.json", "*.safetensors", "tokenizer*"], ignore_patterns=["consolidated*"]
+    )
     vol.commit()
 
 
