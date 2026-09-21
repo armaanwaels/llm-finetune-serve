@@ -1,0 +1,23 @@
+# CPU smoke run: proves the pipeline end to end in a few minutes. Not a real fine-tune.
+run_name: smoke-qwen0.5b
+output_dir: outputs/smoke
+model:
+  id: Qwen/Qwen2.5-0.5B-Instruct
+  dtype: float32
+data:
+  id: b-mc2/sql-create-context
+  n_train: 64
+  n_eval: 16
+  seed: 42
+lora:
+  r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  target_modules: [q_proj, v_proj]
+train:
+  max_length: 256
+  batch_size: 4
+  grad_accum: 1
+  lr: 2.0e-4
+  max_steps: 8
+  logging_steps: 2

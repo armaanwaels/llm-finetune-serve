@@ -1,0 +1,7 @@
+.venv
+outputs
+mlruns
+mlflow.db
+results/smoke
+.env
+.git

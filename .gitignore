@@ -1,0 +1,10 @@
+.env
+.venv/
+__pycache__/
+mlruns/
+outputs/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+results/smoke/
+mlflow.db
