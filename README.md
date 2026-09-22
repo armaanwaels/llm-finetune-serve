@@ -103,7 +103,7 @@ The whole Modal run cost about $0.75 (Modal billing report for the app, same day
 - The HF baseline streams text at word boundaries, so its first chunk can arrive a token or two after the first token was generated. This slightly inflates its TTFT.
 - vLLM does not install on macOS, so the CPU path never exercises vLLM. `serve_vllm.py` is covered only by a test of the command it builds.
 - MLflow 3.16 no longer accepts a plain `./mlruns` file store, so tracking uses a SQLite file instead.
-- Benchmark prompts come from the same dataset as training and may include training rows. That does not affect latency, but the prompts are not a held-out set.
+- Benchmark prompts come from the same dataset as training and may include training rows. Latency is unaffected; the prompts are simply not a held-out set.
 
 ## Stack
 
