@@ -4,7 +4,7 @@ LoRA fine-tune of Mistral-7B-Instruct on a text-to-SQL dataset, served with vLLM
 
 ## Problem
 
-Fine-tuning a 7B model is the easy part. Serving it is where most of the cost goes, and the gap between a naive server and a batching server is often quoted without a reproducible measurement behind it. This repo does both halves with one config-driven pipeline, then measures the serving gap with a client that controls prompt length, output length, warmup and concurrency, and records the hardware it ran on.
+Fine-tuning a 7B model is the easy part. Serving it is where most of the cost goes, and the gap between a naive server and a batching server is often quoted without a reproducible measurement. This repo does both halves with one config-driven pipeline, then measures the serving gap with a client that controls prompt length, output length, warmup and concurrency, and records the hardware it ran on.
 
 ## Architecture
 
